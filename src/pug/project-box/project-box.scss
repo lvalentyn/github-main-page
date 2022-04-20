@@ -1,0 +1,258 @@
+@import '../../scss/vars';
+
+.project-box {
+	&__container {
+		margin: -10px 0;
+	}
+
+	&__menu {
+		position: relative;
+		display: flex;
+		justify-content: center;
+
+		margin-bottom: 20px;
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+
+			width: 100%;
+			height: 2px;
+
+			background-color: #fff;
+
+			animation-name: widthScale;
+			animation-duration: 1.5s;
+		}
+
+		&::after {
+			top: 0;
+			right: 0;
+		}
+
+		&::before {
+			left: 0;
+			bottom: 0;
+		}
+	}
+
+	&__name {
+		position: relative;
+		padding: 20px;
+		font-size: 20px;
+		text-shadow: 5px 5px 15px black;
+		cursor: pointer;
+		transition: .3s ease-in;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 0%;
+			background-color: rgba(255, 255, 255, .3);
+			transition: .3s ease-in;
+		}
+
+		&:hover {
+
+
+			&::after {
+				height: 100%;
+			}
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		transition: .3s ease-in;
+	}
+
+	&__card {
+		position: relative;
+
+		margin: 10px 0;
+		padding: 15px;
+
+		font-size: 14px;
+		color: #fff;
+		text-align: center;
+
+		background: #191c29;
+		border-radius: 6px;
+		cursor: pointer;
+		transition: color .3s ease-in;
+
+		transform-style: preserve-3d;
+
+		&:hover {
+			color: rgb(88 199 250 / 100%);
+
+			&::after {
+				opacity: 1;
+				z-index: -1;
+			}
+
+			.project-box__wrapper {
+				transform: translateZ(20px);
+			}
+
+
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+			width: 100%;
+			height: 100%;
+
+			box-shadow: 0 0 10px #3c67e3;
+
+			border-radius: 8px;
+			opacity: 0;
+			transition: all .3s ease-in;
+			z-index: -10 !important;
+		}
+	}
+
+	&__title-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	&__icon {
+		width: 30px;
+		height: 30px;
+		flex: 0 0 auto;
+
+		&:nth-child(2) {
+			margin-left: auto;
+		}
+
+		&--react {
+			background: url('@img/svg/i-react.svg') center/cover no-repeat;
+		}
+
+		&--markup {
+			background: url('@img/svg/i-html.svg') center/cover no-repeat;
+
+			&:nth-child(3) {
+				background: url('@img/svg/i-css.svg') center/cover no-repeat;
+			}
+
+			&:nth-child(4) {
+				background: url('@img/svg/i-js.svg') center/cover no-repeat;
+			}
+		}
+	}
+
+	&__title {
+		font-size: 25px;
+	}
+
+	&__img {
+		margin-bottom: 20px;
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: all .3s ease-in;
+		}
+	}
+
+	&__text-box {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		padding-left: 20px;
+	}
+
+	&__el {
+		position: relative;
+		width: 49%;
+		font-size: 16px;
+		line-height: 30px;
+		text-align: left;
+		list-style-type: disc;
+
+		&:first-child {
+			padding: 0;
+			margin-left: -20px;
+			margin-bottom: 10px;
+			width: 100%;
+			font-size: 20px;
+			list-style-type: none;
+		}
+	}
+
+	&__btn-box {
+		display: flex;
+		margin: auto -5px 0;
+	}
+
+	&__btn {
+		width: 100%;
+		max-width: 280px;
+		margin: 0 5px;
+	}
+
+	@include respond-from(xs) {
+		&__name {
+			font-size: 24px;
+		}
+
+		&__container {
+			display: flex;
+			flex-wrap: wrap;
+			margin: -10px;
+		}
+
+		&__card {
+			margin: 10px;
+			width: calc(100% / 2 - 20px);
+		}
+
+		&__name {
+			margin: 0 10px;
+		}
+	}
+
+	@include respond-from(md) {
+		&__name {
+			font-size: 34px;
+		}
+
+		&__card {
+			margin: 10px;
+			width: calc(100% / 3 - 20px);
+		}
+	}
+
+	@include respond-from(lg) {
+		&__card {
+			padding: 20px;
+
+			&:hover {
+				img {
+					transform: scale(1.07);
+				}
+			}
+
+		}
+
+	}
+
+	@include respond-from(to-full) {}
+}

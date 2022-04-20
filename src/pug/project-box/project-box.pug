@@ -1,0 +1,140 @@
+mixin slide(props={})
+	.project-box__card.js-card(class=(props.mod) ? props.mod : null)
+		.project-box__wrapper
+			.project-box__title-box
+				.project-box__title #{props.title}
+				if (props.mod === 'react')
+					.project-box__icon.project-box__icon--react
+				if (props.mod === 'markup')
+					.project-box__icon.project-box__icon--markup
+					.project-box__icon.project-box__icon--markup
+					.project-box__icon.project-box__icon--markup
+							
+			.project-box__img
+				img(src=`@img/${props.img}.jpg`, alt="first-proj")
+			ul.project-box__text-box
+				li.project-box__el Addition to using:
+				if(props.descr1)
+					li.project-box__el #{props.descr1}
+				if(props.descr2)
+					li.project-box__el #{props.descr2}
+				if(props.descr3)
+					li.project-box__el #{props.descr3}
+				if(props.descr4)
+					li.project-box__el #{props.descr4}
+				if(props.descr5)
+					li.project-box__el #{props.descr5}
+				
+			.project-box__btn-box
+				a(href=`${props.code}` target='_blank').btn.project-box__btn Code
+				a(href=`${props.demo}` target='_blank').btn.btn--alt.project-box__btn Demo
+
+section.project-box
+	div.project-box__menu
+		p.project-box__name.all All
+		p.project-box__name.html HTML/CSS
+		p.project-box__name.react React
+	.project-box__container
+		+slide({
+			mod: 'markup',
+			img: 'play',
+			title: 'Play-landing',
+			code: 'https://github.com/lvalentyn/play-landing',
+			demo: 'https://lvalentyn.github.io/play-landing/dist/',
+			code: '',
+			demo: '',
+			descr1: 'PUG',
+			descr2: 'SCSS',
+			descr3: 'VanilaJS',
+			descr4: 'Jquery',
+			descr5: 'Mobile-first',
+		})
+		+slide({
+			mod: 'markup',
+			img: 'loan',
+			title: 'Loan-landing',
+			code: 'https://github.com/lvalentyn/loan-landing',
+			demo: 'https://lvalentyn.github.io/loan-landing/dist/',
+			descr1: 'PUG',
+			descr2: 'SCSS',
+			descr3: 'VanilaJS',
+			descr4: 'Jquery',
+			descr5: 'Mobile-first',
+		})
+		+slide({
+			mod: 'markup',
+			img: 'mango',
+			title: 'Mango-landing',
+			code: 'https://github.com/lvalentyn/mango',
+			demo: 'https://lvalentyn.github.io/mango/build/',
+			descr1: 'PUG',
+			descr2: 'SCSS',
+			descr3: 'VanilaJS',
+			descr4: 'Jquery',
+		})
+		+slide({
+			mod: 'markup',
+			img: 'termo',
+			title: 'Termowood-landing',
+			code: 'https://github.com/lvalentyn/termowood',
+			demo: 'https://lvalentyn.github.io/termowood/build/',
+			descr1: 'PUG',
+			descr2: 'SCSS',
+			descr3: 'VanilaJS',
+			descr4: 'Jquery',
+		})
+		+slide({
+			mod: 'markup',
+			img: 'detroit',
+			title: 'Detroit-landing',
+			code: 'https://github.com/lvalentyn/detroitauto',
+			demo: 'https://lvalentyn.github.io/detroitauto/dist/',
+			descr1: 'PUG',
+			descr2: 'SCSS',
+			descr3: 'VanilaJS',
+			descr4: 'Jquery',
+		})
+		
+		+slide({
+			mod: 'react',
+			img: 'travel',
+			title: 'Travel-app',
+			code: 'https://github.com/lvalentyn/travel-app',
+			demo: 'https://travel-space-app.netlify.app/',
+			descr1: 'SCSS',
+			descr2: 'React-router-dom',
+			descr3: 'Framer-motion',
+		})
+		+slide({
+			mod: 'react',
+			img: 'restaurant',
+			title: 'Restaurant-app',
+			code: 'https://github.com/lvalentyn/restaurant-landing-app',
+			demo: 'https://restaurant-landing-app.netlify.app/',
+			descr1: 'SCSS',
+			descr2: 'React-router-dom',
+			descr3: 'Framer-motion',
+		})
+		+slide({
+			mod: 'react',
+			img: 'tesla',
+			title: 'Tesla-app',
+			code: 'https://github.com/lvalentyn/tesla-app',
+			demo: 'https://tesla-1234-app.netlify.app/',
+			descr1: 'Redux',
+			descr2: 'React-router-dom',
+			descr3: 'Framer-motion',
+			descr4: 'Styled-components',
+			descr5: 'React-icons',
+		})
+		+slide({
+			mod: 'react',
+			img: 'secured',
+			title: 'Secured-app',
+			code: 'https://github.com/lvalentyn/secured-app',
+			demo: 'https://secured-432.netlify.app/',
+			descr2: 'React-router-dom',
+			descr3: 'Framer-motion',
+			descr5: 'React-icons',
+		})
+		
