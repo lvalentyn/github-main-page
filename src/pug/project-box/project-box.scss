@@ -57,8 +57,6 @@
 		}
 
 		&:hover {
-
-
 			&::after {
 				height: 100%;
 			}
@@ -140,6 +138,14 @@
 
 		&--react {
 			background: url('@img/svg/i-react.svg') center/cover no-repeat;
+		}
+
+		&--games {
+			background: url('@img/svg/i-games.svg') center/cover no-repeat;
+		}
+
+		&--scenes3d {
+			background: url('@img/svg/i-scenes3d.png') center/cover no-repeat;
 		}
 
 		&--markup {
@@ -226,6 +232,12 @@
 
 		&__name {
 			margin: 0 10px;
+		}
+	}
+
+	@include respond-from(to-sm) {
+		&__menu {
+			flex-wrap: wrap;
 		}
 	}
 

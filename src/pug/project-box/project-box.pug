@@ -5,6 +5,10 @@ mixin slide(props={})
 				.project-box__title #{props.title}
 				if (props.mod === 'react')
 					.project-box__icon.project-box__icon--react
+				if (props.mod === 'games')
+					.project-box__icon.project-box__icon--games
+				if (props.mod === 'scenes3d')
+					.project-box__icon.project-box__icon--scenes3d
 				if (props.mod === 'markup')
 					.project-box__icon.project-box__icon--markup
 					.project-box__icon.project-box__icon--markup
@@ -32,23 +36,25 @@ mixin slide(props={})
 section.project-box
 	div.project-box__menu
 		p.project-box__name.all All
-		p.project-box__name.html HTML/CSS
-		p.project-box__name.react React
+		p.project-box__name.html-btn HTML/CSS
+		p.project-box__name.react-btn React
+		p.project-box__name.games-btn Games
+		p.project-box__name.scenes3d-btn 3D Scenes
 	.project-box__container
+		
 		+slide({
 			mod: 'markup',
 			img: 'play',
 			title: 'Play-landing',
 			code: 'https://github.com/lvalentyn/play-landing',
 			demo: 'https://lvalentyn.github.io/play-landing/dist/',
-			code: '',
-			demo: '',
 			descr1: 'PUG',
 			descr2: 'SCSS',
 			descr3: 'VanilaJS',
 			descr4: 'Jquery',
 			descr5: 'Mobile-first',
 		})
+		
 		+slide({
 			mod: 'markup',
 			img: 'loan',
@@ -62,25 +68,50 @@ section.project-box
 			descr5: 'Mobile-first',
 		})
 		+slide({
+			mod: 'games',
+			img: 'spaceinvaders',
+			title: 'Space Invaders',
+			code: 'https://github.com/lvalentyn/Games/tree/master/SpaceInvaders',
+			demo: 'https://lvalentyn.github.io/Games/SpaceInvaders/',
+			descr3: 'VanilaJS',
+		})
+		+slide({
 			mod: 'markup',
 			img: 'mango',
 			title: 'Mango-landing',
 			code: 'https://github.com/lvalentyn/mango',
 			demo: 'https://lvalentyn.github.io/mango/build/',
+			descr2: 'SCSS',
+			descr3: 'Paroller',
+			descr4: 'Custom Animations',
+		})
+		+slide({
+			mod: 'scenes3d',
+			img: 'cubes',
+			title: 'Cubes',
+			code: 'https://github.com/lvalentyn/3d-css/tree/master/cubes',
+			demo: 'https://lvalentyn.github.io/3d-css/cubes/dist/',
 			descr1: 'PUG',
 			descr2: 'SCSS',
-			descr3: 'VanilaJS',
-			descr4: 'Jquery',
 		})
+		+slide({
+			mod: 'games',
+			img: 'breakout',
+			title: 'Breakout',
+			code: 'https://github.com/lvalentyn/Games/tree/master/Breakout',
+			demo: 'https://lvalentyn.github.io/Games/Breakout/',
+			descr3: 'VanilaJS',
+		})
+		
 		+slide({
 			mod: 'markup',
 			img: 'termo',
 			title: 'Termowood-landing',
 			code: 'https://github.com/lvalentyn/termowood',
 			demo: 'https://lvalentyn.github.io/termowood/build/',
-			descr1: 'PUG',
-			descr2: 'SCSS',
-			descr3: 'VanilaJS',
+			descr1: 'SCSS',
+			descr2: 'Custom Animations',
+			descr3: 'Mailer',
 			descr4: 'Jquery',
 		})
 		+slide({
@@ -89,9 +120,9 @@ section.project-box
 			title: 'Detroit-landing',
 			code: 'https://github.com/lvalentyn/detroitauto',
 			demo: 'https://lvalentyn.github.io/detroitauto/dist/',
-			descr1: 'PUG',
-			descr2: 'SCSS',
-			descr3: 'VanilaJS',
+			descr1: 'SCSS',
+			descr2: 'Custom Animations',
+			descr3: 'Mailer',
 			descr4: 'Jquery',
 		})
 		
@@ -112,7 +143,6 @@ section.project-box
 			code: 'https://github.com/lvalentyn/restaurant-landing-app',
 			demo: 'https://restaurant-landing-app.netlify.app/',
 			descr1: 'SCSS',
-			descr2: 'React-router-dom',
 			descr3: 'Framer-motion',
 		})
 		+slide({
@@ -122,10 +152,9 @@ section.project-box
 			code: 'https://github.com/lvalentyn/tesla-app',
 			demo: 'https://tesla-1234-app.netlify.app/',
 			descr1: 'Redux',
-			descr2: 'React-router-dom',
 			descr3: 'Framer-motion',
-			descr4: 'Styled-components',
-			descr5: 'React-icons',
+			descr5: 'Styled-components',
+			descr4: 'React-icons',
 		})
 		+slide({
 			mod: 'react',
